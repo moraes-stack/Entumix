@@ -1,115 +1,80 @@
-# MazyOS — Sistema operacional do negócio
+# Entumix — MazyOS
 
-Sua empresa roda em cima desse arquivo. Aqui ficam as regras de operação
-do MazyOS — como o Claude lê o contexto, aprende com correções, mantém
-tudo atualizado e cria skills novas conforme a operação evolui.
+> Operação da Entumix dentro do Claude Code. Locação de caçambas e remoção de entulhos em Cascavel/PR.
 
-Esse arquivo é editável. Quando o `/instalar` rodar, ele complementa o
-final dessa página com as regras específicas do seu negócio.
+## O que é esse workspace
 
----
+Pasta central da operação da Entumix. Aqui ficam o site, os conteúdos de marketing, os dados da empresa e todas as saídas que o sistema gera — desde posts até campanhas de anúncio.
+
+**Estrutura de pastas:**
+- `_memoria/` — quem é a empresa, como falamos, foco atual
+- `identidade/` — logos e guia visual aplicado em tudo que o sistema gera (fonte original)
+- `marketing/` — campanhas, conteúdo, mídia paga
+- `saidas/` — documentos e projetos pontuais (site em `saidas/site/`; `saidas/site/identidade/` é cópia de deploy)
+- `dados/` — arquivos a analisar (CSV, XLSX, PDF)
+- `scripts/` — automações e scripts internos
+- `templates/` — templates de skills, design guides e perfis de CLAUDE.md
+
+## Sobre a empresa
+
+A Entumix é especializada em locação de caçambas (3m³, 5m³ e 7m³) e remoção de entulhos em Cascavel/PR. Com 2 anos de mercado, frota própria de 20+ caçambas e nota 4,9 no Google com +50 avaliações.
+
+- **Telefone/WhatsApp:** (45) 99155-3233
+- **Endereço:** R. Recife, 1340 – Centro, Cascavel/PR
+- **Horário:** Seg-Sex 07:30-18h | Sáb 08-12h
+- **Site:** `saidas/site/index.html`
+
+## Serviços
+
+- Locação de caçambas (3m³, 5m³, 7m³) — entrega e retirada inclusas
+- Remoção de entulhos — coleta programada, destinação ecológica
+- Obras comerciais — contratos mensais, desconto por volume
+- Reformas residenciais — caçambas compactas, sem burocracia
+- Limpeza de terrenos
+
+## Tom de voz
+
+Direto, confiante, sem enrolação. Frases curtas. Foco no resultado prático — rapidez, pontualidade, preço justo. Usa segunda pessoa ("você", "sua obra"). Evitar jargão corporativo, termos de guru e excesso de exclamação.
+
+Evitar: "alavancar", "sinergia", "entregar valor", "caro cliente", termos técnicos de construção desnecessários.
+
+## Regras do sistema
+
+- Conteúdo de marketing salvar em `marketing/`
+- Arquivos do site ficam em `saidas/site/`
+- Logos sempre buscar em `identidade/` (nunca recriar)
+- Ao gerar qualquer visual ou texto de marca, ler `identidade/design-guide.md` primeiro
 
 ## Contexto do negócio
 
-No início de toda conversa, ler os seguintes arquivos (quando existirem
-e estiverem preenchidos):
+No início de toda conversa, ler:
+1. `_memoria/empresa.md` — quem é a empresa, contatos, números
+2. `_memoria/preferencias.md` — tom de voz e o que evitar
+3. `_memoria/estrategia.md` — foco atual e prioridades
 
-1. `_memoria/empresa.md` — quem é o usuário, o que faz, como funciona o negócio
-2. `_memoria/preferencias.md` — tom de voz, estilo de escrita, o que evitar
-3. `_memoria/estrategia.md` — foco atual, prioridades, prazos
-
-Usar essas informações como base pra qualquer resposta ou decisão. Ao
-sugerir prioridades, formatos ou abordagens, considerar o foco atual
-descrito em `estrategia.md`.
-
-Pra qualquer tarefa visual (carrossel, post, landing page), consultar
-`identidade/design-guide.md` como referência de estilo.
-
-Não é necessário listar o que foi lido nem confirmar a leitura. Apenas
-usar o contexto naturalmente.
-
----
+Usar essas informações como base pra qualquer resposta. Não listar o que foi lido — só usar o contexto naturalmente.
 
 ## Fluxo de trabalho
 
-Antes de executar qualquer tarefa, verificar se existe skill relevante
-em `.claude/skills/`. Se encontrar, seguir as instruções da skill. Se
-não encontrar, executar a tarefa normalmente.
+Antes de executar qualquer tarefa, verificar se existe skill relevante em `.claude/skills/`. Se encontrar, seguir as instruções da skill.
 
-Ao concluir uma tarefa que não tinha skill mas parece repetível (o
-usuário provavelmente vai pedir de novo no futuro), perguntar:
-
+Ao concluir uma tarefa repetível, perguntar:
 > "Isso pode virar uma skill pra próxima vez. Quer que eu crie?"
-
-Não perguntar pra tarefas pontuais ou perguntas simples. Só quando o
-padrão de repetição for claro.
-
----
 
 ## Aprender com correções
 
-Quando o usuário corrigir algo, melhorar uma resposta ou dar uma
-instrução que parece permanente (frases como "na verdade é assim", "não
-faça mais isso", "prefiro assim", "sempre que...", "evita...", "da
-próxima vez..."), perguntar:
-
+Quando o usuário corrigir algo com caráter permanente, perguntar:
 > "Quer que eu salve isso pra não precisar repetir?"
 
-Se sim, identificar onde faz mais sentido salvar:
+Onde salvar:
+- Sobre o negócio → `_memoria/empresa.md`
+- Sobre estilo → `_memoria/preferencias.md`
+- Sobre prioridades → `_memoria/estrategia.md`
+- Regra de comportamento → `CLAUDE.md`
 
-- **Sobre o negócio** (clientes, serviços, mercado) → `_memoria/empresa.md`
-- **Sobre preferências e estilo** (tom de voz, formato, o que evitar) → `_memoria/preferencias.md`
-- **Sobre prioridades e foco** (projetos, metas, prazos) → `_memoria/estrategia.md`
-- **Regra de comportamento nessa pasta** → próprio `CLAUDE.md`
+## Ferramentas conectadas
 
-Salvar com uma linha nova clara, sem reformatar o arquivo inteiro.
-Confirmar mostrando a linha adicionada.
-
-Não perguntar se a correção for óbvia de contexto imediato (ex: "na
-verdade o arquivo se chama X"). Só perguntar quando a informação tiver
-valor duradouro.
-
----
-
-## Manter contexto atualizado
-
-Ao terminar uma tarefa que mudou algo relevante (cliente novo, skill
-nova, mudança de foco, processo novo, ferramenta instalada, estrutura
-alterada), perguntar:
-
-> "Isso mudou algo no teu contexto. Quer que eu atualize a memória?"
-
-Se sim, identificar o que atualizar:
-
-- **Cliente, serviço, ferramenta, equipe** → `_memoria/empresa.md`
-- **Mudança de prioridade ou foco** → `_memoria/estrategia.md`
-- **Tom ou estilo** → `_memoria/preferencias.md`
-- **Pasta, regra de organização, skill criada** → `CLAUDE.md`
-- **Visual (cores, fontes, logo)** → `identidade/design-guide.md`
-
-Mostrar o que vai mudar antes de salvar. Não reformatar o arquivo
-inteiro, só adicionar ou editar a linha relevante.
-
-**Quando NÃO perguntar:**
-- Tarefas pontuais sem impacto no contexto (escrever um email avulso, criar um post)
-- Perguntas simples ou conversas sem ação
-- Mudanças já salvas pelo bloco "Aprender com correções"
-
-**Dica:** rode `/atualizar` pra uma varredura completa quando houver dúvida.
-
----
-
-## Criação de skills
-
-Quando o usuário pedir skill nova:
-
-1. Verificar se existe template relevante em `templates/skills/`. Se
-   existir, usar como base e adaptar pro contexto
-2. Perguntar se é específica desse projeto ou útil em qualquer:
-   - Específica → `.claude/skills/nome-da-skill/SKILL.md` (local)
-   - Universal → `~/.claude/skills/nome-da-skill/SKILL.md` (global)
-3. Ler `_memoria/empresa.md` e `_memoria/preferencias.md` pra calibrar
-   o conteúdo da skill ao contexto do negócio
-4. Se a skill precisar de arquivos de apoio (templates, exemplos),
-   criar dentro da pasta da skill
-5. Seguir o fluxo da skill-creator nativa do Claude Code
+- [ ] Google Ads
+- [ ] Meta Ads
+- [ ] Google Meu Negócio
+- [ ] WhatsApp Business
