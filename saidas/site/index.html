@@ -75,7 +75,7 @@
     .header-inner { display: flex; align-items: center; gap: 40px; padding: 22px 24px; transition: padding 0.4s ease; }
     .header.scrolled .header-inner { padding: 14px 24px; }
     .logo { display: flex; align-items: center; gap: 0; text-decoration: none; flex-shrink: 0; }
-    .logo img { height: 110px; width: auto; display: block; mix-blend-mode: screen; }
+    .logo img { height: 150px; width: auto; display: block; mix-blend-mode: screen; }
     .logo-accent { color: var(--orange); }
     .nav { display: flex; gap: 4px; margin: 0 auto; }
     .nav-link {
@@ -236,10 +236,10 @@
     /* Scroll Reveal */
     [data-reveal] {
       opacity: 0;
-      transition: opacity 1.1s ease, transform 1.1s ease;
+      transition: opacity 2.0s cubic-bezier(0.22, 1, 0.36, 1), transform 2.0s cubic-bezier(0.22, 1, 0.36, 1);
     }
-    [data-reveal="right"] { transform: translateX(64px); }
-    [data-reveal="left"]  { transform: translateX(-64px); }
+    [data-reveal="right"] { transform: translateX(80px); }
+    [data-reveal="left"]  { transform: translateX(-80px); }
     [data-reveal].revealed {
       opacity: 1;
       transform: translateX(0);
@@ -733,7 +733,7 @@
     <div class="container footer-inner">
       <div class="footer-brand">
         <a href="#inicio" class="logo">
-          <img src="identidade/Logotipo Entumix para fundo preto.png" alt="Entumix" style="height:60px; mix-blend-mode:screen;" />
+          <img src="identidade/Logotipo Entumix para fundo preto.png" alt="Entumix" style="height:110px; mix-blend-mode:screen;" />
         </a>
         <p>Especializada em locação de caçambas e remoção de entulhos em Cascavel/PR. Soluções sustentáveis para sua obra com qualidade e responsabilidade ambiental.</p>
         <div class="footer-contact">
