@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 24px;
+  align-items: flex-start;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+.slide {
+  width: 1080px;
+  height: 1350px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+/* ─── HEADER ─── */
+.slide-header {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  z-index: 20;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 52px 80px 0;
+}
+.logo-img {
+  height: 120px;
+  object-fit: contain;
+  object-position: left center;
+}
+.counter {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+/* ─── FOOTER ─── */
+.slide-footer {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  z-index: 15;
+  padding: 22px 80px 40px;
+  display: flex;
+  align-items: center;
+}
+.handle-txt {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+
+/* ─── SHARED ELEMENTS ─── */
+.eyebrow {
+  display: block;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.30em;
+  text-transform: uppercase;
+  color: #F97316;
+  margin-bottom: 20px;
+}
+.rule {
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #F97316;
+  margin: 20px 0 26px;
+}
+.pill-tag {
+  display: inline-block;
+  padding: 9px 22px;
+  background: #F97316;
+  color: #fff;
+  border-radius: 100px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+}
+
+
+/* ═══════════════════════════════════════
+   SLIDE 01 — CAPA
+═══════════════════════════════════════ */
+#slide-01 {
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(17,17,17,0.82) 0%,
+      rgba(17,17,17,0.80) 28%,
+      rgba(17,17,17,0.76) 52%,
+      rgba(17,17,17,0.20) 74%,
+      rgba(17,17,17,0.50) 100%
+    ),
+    url('../../../identidade/Foto 1.jpeg') center / cover no-repeat;
+}
+
+#slide-01 .capa-content {
+  position: absolute;
+  top: 42%;
+  transform: translateY(-50%);
+  left: 0; right: 0;
+  padding: 0 80px;
+}
+#slide-01 .capa-title {
+  font-size: 90px;
+  font-weight: 900;
+  line-height: 0.94;
+  letter-spacing: -0.042em;
+  color: #FAFAF7;
+  margin-top: 26px;
+  margin-bottom: 22px;
+}
+#slide-01 .capa-subtitle {
+  font-size: 23px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: rgba(250,250,247,0.60);
+}
+#slide-01 .slide-footer {
+  border-top: 1px solid rgba(250,250,247,0.15);
+}
+#slide-01 .handle-txt { color: rgba(250,250,247,0.45); }
+
+
+/* ═══════════════════════════════════════
+   SLIDE 02 — PASSO 01 (dark)
+═══════════════════════════════════════ */
+#slide-02 {
+  background: #111111;
+}
+#slide-02 .counter { color: rgba(250,250,247,0.35); }
+
+#slide-02 .wm-num {
+  position: absolute;
+  right: -10px;
+  bottom: 60px;
+  font-size: 320px;
+  font-weight: 900;
+  letter-spacing: -0.06em;
+  line-height: 1;
+  color: rgba(249,115,22,0.07);
+  z-index: 1;
+  pointer-events: none;
+  user-select: none;
+}
+#slide-02 .content {
+  position: absolute;
+  left: 80px;
+  right: 80px;
+  top: 44%;
+  transform: translateY(-44%);
+  z-index: 5;
+}
+#slide-02 h2 {
+  font-size: 68px;
+  font-weight: 800;
+  line-height: 1.0;
+  letter-spacing: -0.035em;
+  color: #FAFAF7;
+  margin-bottom: 26px;
+  max-width: 700px;
+}
+#slide-02 p {
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.58;
+  color: rgba(250,250,247,0.58);
+  max-width: 580px;
+}
+#slide-02 .slide-footer {
+  border-top: 1px solid rgba(255,255,255,0.10);
+}
+#slide-02 .handle-txt { color: rgba(250,250,247,0.30); }
+
+
+/* ═══════════════════════════════════════
+   SLIDE 03 — PASSO 02 (cream/light)
+═══════════════════════════════════════ */
+#slide-03 {
+  background: #F5ECD7;
+}
+#slide-03 .counter { color: rgba(17,17,17,0.35); }
+
+#slide-03 .wm-num {
+  position: absolute;
+  right: -10px;
+  bottom: 60px;
+  font-size: 320px;
+  font-weight: 900;
+  letter-spacing: -0.06em;
+  line-height: 1;
+  color: rgba(249,115,22,0.10);
+  z-index: 1;
+  pointer-events: none;
+  user-select: none;
+}
+#slide-03 .content {
+  position: absolute;
+  left: 80px;
+  right: 80px;
+  top: 44%;
+  transform: translateY(-44%);
+  z-index: 5;
+}
+#slide-03 h2 {
+  font-size: 68px;
+  font-weight: 800;
+  line-height: 1.0;
+  letter-spacing: -0.035em;
+  color: #111111;
+  margin-bottom: 26px;
+  max-width: 700px;
+}
+#slide-03 p {
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.58;
+  color: #6B7280;
+  max-width: 580px;
+}
+#slide-03 .slide-footer {
+  border-top: 1px solid rgba(17,17,17,0.12);
+}
+#slide-03 .handle-txt { color: rgba(17,17,17,0.35); }
+
+
+/* ═══════════════════════════════════════
+   SLIDE 04 — PASSO 03 (dark)
+═══════════════════════════════════════ */
+#slide-04 {
+  background: #111111;
+}
+#slide-04 .counter { color: rgba(250,250,247,0.35); }
+
+#slide-04 .wm-num {
+  position: absolute;
+  right: -10px;
+  bottom: 60px;
+  font-size: 320px;
+  font-weight: 900;
+  letter-spacing: -0.06em;
+  line-height: 1;
+  color: rgba(249,115,22,0.07);
+  z-index: 1;
+  pointer-events: none;
+  user-select: none;
+}
+#slide-04 .content {
+  position: absolute;
+  left: 80px;
+  right: 80px;
+  top: 44%;
+  transform: translateY(-44%);
+  z-index: 5;
+}
+#slide-04 h2 {
+  font-size: 88px;
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -0.042em;
+  color: #FAFAF7;
+  margin-bottom: 28px;
+  max-width: 640px;
+}
+#slide-04 p {
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.58;
+  color: rgba(250,250,247,0.58);
+  max-width: 560px;
+}
+#slide-04 .slide-footer {
+  border-top: 1px solid rgba(255,255,255,0.10);
+}
+#slide-04 .handle-txt { color: rgba(250,250,247,0.30); }
+
+
+/* ═══════════════════════════════════════
+   SLIDE 05 — NÚMERO / PROVA SOCIAL (dark)
+═══════════════════════════════════════ */
+#slide-05 {
+  background: #111111;
+}
+#slide-05 .counter { color: rgba(250,250,247,0.35); }
+
+#slide-05 .content {
+  position: absolute;
+  left: 80px;
+  right: 80px;
+  top: 42%;
+  transform: translateY(-42%);
+  z-index: 5;
+}
+#slide-05 .big-num {
+  font-size: 260px;
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  line-height: 0.88;
+  color: #F97316;
+}
+#slide-05 .stars {
+  font-size: 34px;
+  color: #F97316;
+  margin-top: 18px;
+  letter-spacing: 6px;
+}
+#slide-05 .num-eyebrow {
+  display: block;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(249,115,22,0.70);
+  margin-top: 36px;
+}
+#slide-05 h3 {
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: #FAFAF7;
+  margin-top: 10px;
+}
+#slide-05 .slide-footer {
+  border-top: 1px solid rgba(255,255,255,0.10);
+}
+#slide-05 .handle-txt { color: rgba(250,250,247,0.30); }
+
+
+/* ═══════════════════════════════════════
+   SLIDE 06 — CTA FINAL (laranja)
+═══════════════════════════════════════ */
+#slide-06 {
+  background: #F97316;
+}
+#slide-06 .cta-wrap {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px;
+  gap: 0;
+}
+#slide-06 .cta-logo {
+  height: 120px;
+  object-fit: contain;
+  margin-bottom: 60px;
+}
+#slide-06 h2 {
+  font-size: 74px;
+  font-weight: 900;
+  line-height: 0.96;
+  letter-spacing: -0.042em;
+  color: #111111;
+  text-align: center;
+  max-width: 780px;
+  margin-bottom: 52px;
+}
+#slide-06 .cta-phone-pill {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: rgba(17,17,17,0.14);
+  padding: 20px 44px;
+  border-radius: 100px;
+  margin-bottom: 28px;
+}
+#slide-06 .cta-phone-txt {
+  font-size: 30px;
+  font-weight: 700;
+  color: #111111;
+  letter-spacing: 0.01em;
+}
+#slide-06 .cta-handle {
+  font-size: 18px;
+  font-weight: 600;
+  color: rgba(17,17,17,0.50);
+  letter-spacing: 0.06em;
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════ SLIDE 01 — CAPA ═══════ -->
+<div class="slide" id="slide-01">
+  <div class="slide-header">
+    <img class="logo-img" src="../../../identidade/Logotipo Entumix para fundo preto.png" alt="Entumix">
+  </div>
+
+  <div class="capa-content">
+    <span class="pill-tag">Cascavel · PR</span>
+    <h1 class="capa-title">Caçamba na sua obra em menos de 24h</h1>
+    <p class="capa-subtitle">Sem burocracia. Sem surpresa.</p>
+  </div>
+
+  <div class="slide-footer">
+    <span class="handle-txt">@entumix</span>
+  </div>
+</div>
+
+
+<!-- ═══════ SLIDE 02 — PASSO 01 ═══════ -->
+<div class="slide" id="slide-02">
+  <div class="slide-header">
+    <img class="logo-img" src="../../../identidade/Logotipo Entumix para fundo preto.png" alt="Entumix">
+    <span class="counter">02 / 06</span>
+  </div>
+
+  <div class="wm-num">01</div>
+
+  <div class="content">
+    <span class="eyebrow">Passo 01 · 3</span>
+    <h2>Mandou? Preço na hora.</h2>
+    <p>Manda o endereço e o tamanho da obra. Em minutos, preço e data de entrega na sua mão. Sem ligação, sem visita.</p>
+  </div>
+
+  <div class="slide-footer">
+    <span class="handle-txt">@entumix</span>
+  </div>
+</div>
+
+
+<!-- ═══════ SLIDE 03 — PASSO 02 ═══════ -->
+<div class="slide" id="slide-03">
+  <div class="slide-header">
+    <img class="logo-img" src="../../../identidade/Entumix fundo removido.png" alt="Entumix">
+    <span class="counter">03 / 06</span>
+  </div>
+
+  <div class="wm-num">02</div>
+
+  <div class="content">
+    <span class="eyebrow">Passo 02 · 3</span>
+    <h2>Marcou? Chegou.</h2>
+    <p>Frota própria, sem terceirizado. A caçamba aparece na hora combinada e você não faz nada além de receber.</p>
+  </div>
+
+  <div class="slide-footer">
+    <span class="handle-txt">@entumix</span>
+  </div>
+</div>
+
+
+<!-- ═══════ SLIDE 04 — PASSO 03 ═══════ -->
+<div class="slide" id="slide-04">
+  <div class="slide-header">
+    <img class="logo-img" src="../../../identidade/Logotipo Entumix para fundo preto.png" alt="Entumix">
+    <span class="counter">04 / 06</span>
+  </div>
+
+  <div class="wm-num">03</div>
+
+  <div class="content">
+    <span class="eyebrow">Passo 03 · 3</span>
+    <h2>Encheu? Sumiu.</h2>
+    <p>Só avisar. Retirada inclusa e destinação ecológica, sem custo extra.</p>
+  </div>
+
+  <div class="slide-footer">
+    <span class="handle-txt">@entumix</span>
+  </div>
+</div>
+
+
+<!-- ═══════ SLIDE 05 — PROVA SOCIAL ═══════ -->
+<div class="slide" id="slide-05">
+  <div class="slide-header">
+    <img class="logo-img" src="../../../identidade/Logotipo Entumix para fundo preto.png" alt="Entumix">
+    <span class="counter">05 / 06</span>
+  </div>
+
+  <div class="content">
+    <div class="big-num">4,9</div>
+    <div class="stars">★★★★★</div>
+    <span class="num-eyebrow">Avaliação Google</span>
+    <h3>Mais de 50 clientes<br>satisfeitos em Cascavel</h3>
+  </div>
+
+  <div class="slide-footer">
+    <span class="handle-txt">@entumix</span>
+  </div>
+</div>
+
+
+<!-- ═══════ SLIDE 06 — CTA FINAL ═══════ -->
+<div class="slide" id="slide-06">
+  <div class="cta-wrap">
+    <img class="cta-logo" src="../../../identidade/Entumix fundo removido.png" alt="Entumix">
+    <h2>Peça sua caçamba agora</h2>
+    <div class="cta-phone-pill">
+      <span class="cta-phone-txt">(45) 99155-3233</span>
+    </div>
+    <span class="cta-handle">@entumix · Cascavel/PR</span>
+  </div>
+</div>
+
+
+</body>
+</html>
