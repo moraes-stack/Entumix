@@ -26,4 +26,4 @@
 
 ## Contexto adicional
 
-Site concluído em `saidas/site/index.html` e configurado para Netlify (`netlify.toml` na raiz, publish = "saidas/site"). Logos disponíveis em `identidade/`. Repositório GitHub: `https://github.com/moraes-stack/MazyOS`.
+Site concluído em `saidas/site/index.html` e configurado para Netlify (`netlify.toml` na raiz, publish = "saidas/site"). Logos disponíveis em `identidade/`. Repositório GitHub: `https://github.com/moraes-stack/Entumix` (renomeado de MazyOS em jun/2026).
