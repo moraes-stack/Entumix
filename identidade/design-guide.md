@@ -55,10 +55,10 @@ Industrial-moderno. Fundo escuro no header/footer com laranja como cor de ação
 
 ## Logo
 
-- **Arquivo:** `identidade/logo.png` (fundo transparente, uso em fundo claro)
-- **Versão pra fundo escuro:** `identidade/logo-fundo-escuro.png` / `identidade/Logotipo Entumix para fundo preto.png`
-- **Logo completo:** `identidade/logo-completo.png` / `identidade/Logotipo completa Entumix.png`
-- **Logo caçamba (ícone):** `identidade/logo caçamba.png`
+- **Logo principal (fundo escuro):** `identidade/Logotipo Entumix para fundo preto.png` — usado no header e footer do site
+- **Logo fundo transparente:** `identidade/Entumix fundo removido.png`
+- **Caminhão (frota):** `identidade/caminhão.png` — usado na seção de serviços do site
+- **Caçamba (ícone):** `identidade/caçamba.png` — usado na seção "sobre" do site
 - **Favicon:** `identidade/favicon.png`
 - **Fotos de obra (hero do site):** `identidade/Foto 1.jpeg` até `Foto 4.jpeg`
 - **Onde usar:** slide final do carrossel (CTA), header de propostas, posts com CTA

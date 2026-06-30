@@ -4,7 +4,7 @@
 
 ## Fase
 
-Empresa com 2 anos de mercado, reputação sólida no Google (4,9 com +50 avaliações). Site finalizado (visual com caminhão, caçamba, Google Maps por coordenadas GPS), repositório no GitHub (`moraes-stack/MazyOS`) e pronto para deploy no Netlify. Próximo passo: consolidar presença digital e aumentar volume de pedidos.
+Empresa com 2 anos de mercado, reputação sólida no Google (4,9 com +50 avaliações). Site finalizado (visual com caminhão, caçamba, Google Maps por coordenadas GPS), repositório no GitHub (`moraes-stack/Entumix`) e pronto para deploy no Netlify. Próximo passo: consolidar presença digital e aumentar volume de pedidos.
 
 ## Prioridade principal
 
